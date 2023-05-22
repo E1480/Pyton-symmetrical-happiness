@@ -1,14 +1,15 @@
 import cv2
 
 class App:
-    def __init__(self) -> None:
-        self.vid = cv2.VideoCapture(0)
+    def __init__(self, camera: int = 0) -> None:
+        self.camera = camera
+        self.vid = cv2.VideoCapture(self.camera)
     
     def Loop(self):
         while True:
             ret, frame = self.vid.read()
             
-            cv2.imshow('frame', frame)
+            cv2.imshow('Window', frame)
             
             if cv2.waitKey(1) & 0xFF == ord("q"):
                 break
