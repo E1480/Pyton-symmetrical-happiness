@@ -4,5 +4,4 @@ class Main():
         pass
 
 if __name__ == "__main__":
-   # Caesar_Decipher("Decipher")
-    Main("Cipher")
+    Main()
