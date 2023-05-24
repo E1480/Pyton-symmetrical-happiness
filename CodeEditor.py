@@ -1,3 +1,6 @@
+#####################
+# Code From: https://www.thepythoncode.com/article/python-code-editor-using-tkinter-python
+####################
 from tkinter import *
 from tkinter import filedialog
 import ctypes
@@ -108,6 +111,15 @@ editArea.pack(
     fill=BOTH,
     expand=1
 )
+
+editArea.insert('1.0', """
+from tkinter import *
+
+win = Tk()
+
+
+win.mainloop()
+                """)
 
 # Bind the KeyRelase to the Changes Function
 editArea.bind('<KeyRelease>', changes)
