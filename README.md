@@ -4,4 +4,4 @@ Random Ass project
 
 # TODO
 
-* Fix Button on line: 24
+* Fix Button on line: 24. Main.py
