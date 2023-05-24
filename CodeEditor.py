@@ -14,12 +14,14 @@ root.geometry('500x500')
 
 # Execute the Programm
 def execute(event=None):
-
-    file = filedialog.asksaveasfile(defaultextension='.py',
-                                    filetypes=[("Python script",".py")])
-    file.write(str(editArea.get('1.0', END)))
-    file.close()
-    root.destroy()
+    try:
+        file = filedialog.asksaveasfile(defaultextension='.py',
+                                        filetypes=[("Python script",".py")])
+        file.write(str(editArea.get('1.0', END)))
+        file.close()
+        root.destroy()
+    except:
+        return print(" \n Not Saved")
     
 
     # Write the Content to the Temporary File
@@ -114,4 +116,9 @@ editArea.bind('<KeyRelease>', changes)
 root.bind('<Control-s>', execute)
 
 changes()
+MainMenuBar = Menu(root)
+FileMenu = Menu(MainMenuBar, tearoff=0)
+MainMenuBar.add_cascade(label="File", menu=FileMenu)
+FileMenu.add_command(label="Save", command=execute)
+root.config(menu=MainMenuBar)
 root.mainloop()

@@ -5,7 +5,7 @@ from subprocess import call
 if __name__ == "__main__":
 
     def OpenNew():
-        call(["python", "test.py"])
+        call(["python", "CodeEditor.py"])
     
     def Run():
         e = filedialog.askopenfilename(defaultextension=".py", filetypes=[("Python script",".py")])
